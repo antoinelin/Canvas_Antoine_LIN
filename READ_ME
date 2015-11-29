@@ -1,0 +1,50 @@
+
+.______       _______      ___       _______     .___  ___.  _______ 
+|   _  \     |   ____|    /   \     |       \    |   \/   | |   ____|
+|  |_)  |    |  |__      /  ^  \    |  .--.  |   |  \  /  | |  |__   
+|      /     |   __|    /  /_\  \   |  |  |  |   |  |\/|  | |   __|  
+|  |\  \----.|  |____  /  _____  \  |  '--'  |   |  |  |  | |  |____ 
+| _| `._____||_______|/__/     \__\ |_______/    |__|  |__| |_______|
+
+
+/* A PROPOS DE LA REALISATION */
+
+Pour ce canvas j'ai voulu faire une page d'indexation pour mon site en construction avec une création des "shapes" de mon logo et l'apparition de mon nom/prénom.
+Pour ce faire j'ai reproduit mon logo en forme dans le canvas, j'ai aligné les lignes repères qui "forment" mon logo sur les bords de mes formes et j'ai animé le tout en faisant arriver chacune de mes lignes une par une avant de faire apparaître mon logo.
+
+/* L'IDEE */
+
+Pour trouver cette idée je suis allé sur Dribble et j'ai taper "construction" dans la barre de recherche, je suis tombé sur des images de logo avec les shapes qui les construisent et j'ai récupéré l'idée pour l'animer en canvas.
+
+/* ARBORESCENCE */
+
+Au niveau de l'arborescence, comme j'ai très peu de fichiers, tout est directement placé en racine du dossier.
+
+/* A PROPOS DU CODE */
+
+Le code est structuré en plusieurs parties.
+
+* Dans un premier temps je commence en créant mon logo :
+
+- Mise en place de la fonction "roundRect()" pour créer un rectangle aux bords arrondis, pour ce faire j'ai fait en sorte que mon tracé soit en "ligne + courbe" avec l'angle de ma courbe en fonction de l'angle entre les deux côtés qui la composent. Dans cette fonction il y a comme argument la position en X, en Y, la taille en X, en Y, le rayon de mes angles et la possibilité d'ajouter un callback pour déclencher une fonction une fois que celle ci ce réalise.
+Cette méthode me permet de réutiliser ma fonction "roundRect()" quand j'en ai besoin pour créer un rectangle arrondis de la taille que je veux, à la position que je veux, avec les angles que je veux, quand je veux et autant de fois que je veux.
+
+- J'ai ensuite commencé à tracer l'intérieur de mon logo en placant tout mes points dans un tableau pour avoir la possiblité de réduire ou augmenter la taille de mon logo sans avoir a refaire tout mes tracé à chaque fois.
+
+- J'ai ajouté une marge a chacune de mes positions X et Y pour déplacer l'ensemble des points en même temps pour bouger mon logo sans le déformer.
+
+
+* J'ai ensuite créé la fonction qui me permet de gérer l'animation de mes lignes:
+
+- Je suis parti sur un système de progression en fonction du temps avec une accélération à incrémentation pour avoir un effet "ease". J'exprime mes valeurs en pourcentages pour que ce soit plus pratique.
+
+
+* Ma fonction draw() se charge de déclencher les dessins en callback pour lancer les animations les unes après les autres.
+
+
+* Concernant les animations, j'ai une fonction pour:
+- Les lignes
+- La création sur logo
+- Le déplacement du logo
+- La création du dessin
+

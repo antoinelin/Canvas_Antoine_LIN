@@ -1,0 +1,34 @@
+body {
+	background: #eee;
+    font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+    overflow: hidden;
+}
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+}
+footer {
+    z-index: 200;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+footer > p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    color: #232323;
+    font-weight: lighter;
+}
